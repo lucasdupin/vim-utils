@@ -1,0 +1,2 @@
+delimitMate.vba: call delete('/Users/frangossauro/.vim/doc/delimitMate.txt')|call delete('/Users/frangossauro/.vim/plugin/delimitMate.vim')
+Align.vba: call delete('/Users/frangossauro/.vim/plugin/AlignPlugin.vim')|call delete('/Users/frangossauro/.vim/plugin/AlignMapsPlugin.vim')|call delete('/Users/frangossauro/.vim/plugin/cecutil.vim')|call delete('/Users/frangossauro/.vim/doc/Align.txt')|call delete('/Users/frangossauro/.vim/autoload/Align.vim')|call delete('/Users/frangossauro/.vim/autoload/AlignMaps.vim')

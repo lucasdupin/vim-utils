@@ -1,0 +1,154 @@
+snippet bindable
+	[Bindable(event="${2:eventName}")]
+snippet swf
+	[SWF(width='${1:550}', height='${2:400}', backgroundColor='#${3:FFFFFF}', frameRate='${4:60}')]
+snippet break
+	break ${1:label};
+snippet build
+	---
+	default:
+	    - debug: false
+	      open: public/${1:Main}.swf
+	      extra: -use-network=false
+	    
+	library-path:
+	    - ${2:source/swc}
+	
+	source-path:
+	    - ${3:source/classes}
+	    
+	applications:
+	    - class: source/classes/$1.as
+	      output: public/$1.swf
+snippet case
+	case ${1:expression} :
+		$0
+	break;
+snippet catch
+	catch (e:${1:Error})
+	{
+		$0
+	}
+snippet ?
+	? ${1:trueExpression} : ${2:falseExpression}$0
+snippet const
+	const ${1:name}:${2:Object};
+snippet default
+	default ${1:expression} :
+		$0
+	break;
+snippet dispatch
+	dispatchEvent(new ${1:Event}(${1:Event}.${2/^.+$/\U$0\E/g})); // ${2:CLICK}
+
+snippet dispose
+	if($1){
+		$1.dispose();
+		safeRemoveChild($1);
+		$1 = null;
+	}
+snippet do
+	do
+	{
+		$2
+	}
+	while ($1);
+snippet else
+	else
+	{
+		$0
+	}
+snippet smartFor
+	for (var ${1:i}:int = 0, ${2:el}:${3:*}; ${2:el} = ${4:elements}[${1:i}]; ${1:i}++)
+	{
+		$0
+	}
+snippet forEach
+	for each (var ${1:item}:${2:Object} in ${3:obj})
+	{
+		$0
+	}
+snippet forIn
+	for (var ${1:p}:String in ${2:obj})
+	{
+		$0
+	}
+snippet for for
+	for (var ${1:i}:int = ${2:0}; ${1:i} < ${3:n}; ${1:i}++)
+	{
+		$0
+	}
+snippet if
+	if (${1})
+	{
+		${0}
+	}
+snippet include
+	inlcude ${1:filename.as};
+snippet log
+	Log.getLogger("${1:`echo ${TM_FILENAME%.as}`}").${2:error}(${3:message});
+snippet <
+	<${1:name}>$0</${1/([^ ]+).*/$1/}>
+snippet switch
+	switch ($1)
+	{
+		$0
+	}
+snippet throw
+	throw new ${1:Error}("${2:Error Message}");
+snippet try
+	try
+	{
+		$1
+	} 
+	catch (e:Error)
+	{
+		$2
+	}
+snippet tryFinally
+	try
+	{
+		$1
+	}
+	catch (e:Error)
+	{
+		$2
+	} 
+	finally
+	{
+		$3
+	}
+snippet use
+	use namespace ${1:nsName};
+snippet public
+	${1:public} var ${2:name}:${3:Object}$;
+snippet func
+	${1:public} function ${2:name}:${3:Object}${
+		$0
+	}
+snippet var
+	var ${1:name}:${2:Object}$;
+snippet while
+	while (${1})
+	{
+		${0}
+	}
+snippet package
+	package ${1} {
+		import flash.display.*;
+		import flash.events.*;
+		
+		public class ${2:MyClass} extends ${3:Sprite}{
+
+			public function $2(){
+				$0
+			}
+		}
+	}
+
+snippet class
+	public class ${1} extends ${2:Sprite}{
+	
+		public function ${1}(){
+		
+		}
+	}
