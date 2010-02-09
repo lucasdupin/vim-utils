@@ -134,6 +134,12 @@ if has('gui_running')
 endif
 
 "
+" Actionscript support in taglist
+""
+let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
+
+
+"
 " SuperTab Completion
 "
 let g:SuperTabDefaultCompletionType = "context"
@@ -181,6 +187,7 @@ nn <Leader>d       <ESC>:NERDTreeToggle<cr>
 
 nn <Leader>n       <ESC>:set number! number?<cr>
 
+nn <Leader>t       <ESC>:TlistToggle<Cr>
 nn <Leader>s       <ESC>:Ack 
 nn <Leader>r       <ESC>:make<Cr>
 nn <Leader>o       <ESC>:make open<Cr>

@@ -120,9 +120,9 @@ snippet tryFinally
 snippet use
 	use namespace ${1:nsName};
 snippet public
-	${1:public} var ${2:name}:${3:Object}$;
+	${1:public} var ${2:name}:${3:Object};
 snippet func
-	${1:public} function ${2:name}:${3:Object}${
+	${1:public} function ${2:name}(${3}):${4:void}{
 		$0
 	}
 snippet var
@@ -146,9 +146,9 @@ snippet package
 	}
 
 snippet class
-	public class ${1} extends ${2:Sprite}{
+	public class ${1:MyClass} extends ${2:Sprite}{
 	
-		public function ${1}(){
-		
+		public function ${1:MyClass}(){
+			$0
 		}
 	}

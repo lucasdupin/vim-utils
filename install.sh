@@ -3,19 +3,18 @@
 BIN_FOLDER=~/.bin
 
 #Baking up old files
-if [ -h ~/.vim ]; then
-	echo "baking up your .vim folder"
-	mv ~/.vim ~/vim_bak 
-fi
-
-if [ -h ~/.vimrc ]; then
-	echo "baking up your .vimrc"
-	mv ~/.vimrc ~/vimrc_bak
-fi
+for file in ~/.vim ~/.vimrc ~/.ctags
+do
+	if [ -h file ]; then
+		echo "baking up your .vim folder"
+		mv file "$file.bak" 
+	fi
+done
 
 #Linking
 ln -s `pwd`/vim ~/.vim
 ln -s `pwd`/vimrc ~/.vimrc
+ln -s `pwd`/ctags ~/.ctags
 
 #Installing daemon
 if [ -d $BIN_FOLDER ]; then
