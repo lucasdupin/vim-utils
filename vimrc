@@ -125,7 +125,8 @@ if has('gui_running')
     set t_Co=256
     "colorscheme molokai 
     colorscheme molokai
-    set gfn=Monaco:h10
+    ""set gfn=Monaco:h13
+    set gfn=Menlo:h12
 
     set fuoptions=maxvert,maxhorz
 
@@ -224,10 +225,10 @@ nmap <Leader>c :set invfullscreen<cr>
 au FileType xhtml,xml so ~/.vim/ftplugin/html_autoclosetag.vim
 
 
-" Make actionscript helpers with sprout 
+" Make actionscript helpers
 au FileType actionscript set makeprg=rake
 au FileType as3 set efm=%C%.%#,%E%f(%l) col %c\ Error %m
-autocmd BufRead *.as set filetype=actionscript
+autocmd BufRead,BufNewFile *.as set filetype=actionscript
 
 " Interpret python code under the visual cursor 
 au FileType python set makeprg=python\ %
