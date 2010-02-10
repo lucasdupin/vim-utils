@@ -187,10 +187,12 @@ nn <Leader>d       <ESC>:NERDTreeToggle<cr>
 
 nn <Leader>n       <ESC>:set number! number?<cr>
 
-nn <Leader>t       <ESC>:TlistToggle<Cr>
+nn <Leader>e       <ESC>:TlistToggle<Cr>
 nn <Leader>s       <ESC>:Ack 
 nn <Leader>r       <ESC>:make<Cr>
 nn <Leader>o       <ESC>:make open<Cr>
+
+let Tlist_File_Fold_Auto_Close = 1
 
 " Shit, something is over my shoulder, my code
 " is super secret. QUIT NOW, I REPEAT, NOW
