@@ -4,9 +4,9 @@
 
 set nocompatible
 
+colorscheme wombat
 " General
 set t_Co=256
-colorscheme molokai
 set shm=atI                     " Disable Intro screen
 set vb                		" Visual bell
 ""set nobk nowb noswf             " Disable backup
@@ -124,7 +124,10 @@ if has('gui_running')
 
     set t_Co=256
     "colorscheme molokai 
+    colorscheme molokai
     set gfn=Monaco:h10
+
+    set fuoptions=maxvert,maxhorz
 
     " Dont show shitty toolbar
     set go-=T to 
@@ -207,7 +210,7 @@ xno <Leader>y !pbcopy<cr><esc>u
 nmap <silent> <Leader>p :SmartPaste<cr>
 
 " Fullscreen "
-nmap <Leader>c :set invfullscreen<cr>:set columns=1000<cr>
+nmap <Leader>c :set invfullscreen<cr>
 
 " Map space key to fold/unfold!
 ""nnoremap <space> za
