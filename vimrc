@@ -6,7 +6,6 @@ set nocompatible
 
 colorscheme wombat
 " General
-set t_Co=256
 set shm=atI                     " Disable Intro screen
 set vb                          " Visual bell
 ""set nobk nowb noswf             " Disable backup
