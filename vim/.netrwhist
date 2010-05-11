@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/lucas/src/skol_summer10/main-site/trunk'
-let g:netrw_dirhist_2='/Users/lucas/.gem/ruby/1.8/gems/plist-3.0.0/lib'
-let g:netrw_dirhist_3='/Users/lucas/src/scbf/main-site/trunk'
-let g:netrw_dirhist_4='/Users/lucas/src/scbf/main-site/trunk/source'
