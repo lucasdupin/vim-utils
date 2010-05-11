@@ -139,7 +139,7 @@ endif
 "
 " Actionscript support in taglist
 ""
-let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:variable'
+let tlist_actionscript_settings = 'actionscript;i:TODO;c:class;I:interface;f:method;p:property;v:variable'
 
 
 "
