@@ -8,7 +8,7 @@ colorscheme wombat
 " General
 set t_Co=256
 set shm=atI                     " Disable Intro screen
-set vb                		" Visual bell
+set vb                          " Visual bell
 ""set nobk nowb noswf             " Disable backup
 set lazyredraw                  " Don't update while in macro
 set ttyfast                     " Improves redrawing
@@ -76,12 +76,11 @@ set scrolloff=10         " At Least 5 lines above/below cursor
 " Text formatting, identing, tabbing
 set autoindent
 set smarttab
-""set expandtab
-""set shiftround
-""set shiftwidth=4
-""set softtabstop=4
+set expandtab
+set softtabstop=4
+set tabstop=4
 set nojoinspaces
-set backspace=indent,eol,start          	            " Allow backspacing over anything 
+set backspace=indent,eol,start                              " Allow backspacing over anything 
 
 " Filetype may overwrite indent options!
 filetype plugin indent on
@@ -108,7 +107,7 @@ set hlsearch                " Highligh searches
 
 " Code configs 
 syntax on
-set showmatch 		 " Show matching brackets
+set showmatch            " Show matching brackets
 set mat=5
 set matchpairs=(:),{:},[:],<:>
 
@@ -203,8 +202,8 @@ let Tlist_File_Fold_Auto_Close = 1
 nn <Leader>q        <ESC>:x<Cr>
 
 " Visual mode
-xno v 	<esc>
-xno <Leader>=  :Align =<CR>	
+xno v   <esc>
+xno <Leader>=  :Align =<CR>     
 
 " Yank to all app's
 xno <Leader>y !pbcopy<cr><esc>u 
