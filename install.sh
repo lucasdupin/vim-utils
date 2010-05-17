@@ -7,7 +7,7 @@ for file in ~/.vim ~/.vimrc ~/.ctags
 do
 	if [ -h file ]; then
 		echo "baking up your .vim folder"
-		mv file "$file.bak" 
+		mv file "$file.`date +%s`.bak" 
 	fi
 done
 
@@ -21,7 +21,7 @@ if [ -d $BIN_FOLDER ]; then
 	echo ".bin already exists"
 
 	#removing old files
-	rm $BIN_FOLDER/fcshd.rb
+	rm $BIN_FOLDER/fcshd
 	rm $BIN_FOLDER/mvim
 else
 	#Creating dir
@@ -34,10 +34,10 @@ else
 fi
 
 #Creating the links
-ln -s `pwd`/bin/fcshd.rb $BIN_FOLDER/fcshd.rb
+ln -s `pwd`/bin/fcshd $BIN_FOLDER/fcshd
 ln -s `pwd`/bin/mvim $BIN_FOLDER/mvim
 
-chmod u+x $BIN_FOLDER/fcshd.rb
+chmod u+x $BIN_FOLDER/fcshd
 chmod u+x $BIN_FOLDER/mvim
 
 echo "Yep!"
