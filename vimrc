@@ -74,11 +74,12 @@ set scrolloff=10         " At Least 5 lines above/below cursor
 
 " Text formatting, identing, tabbing
 set autoindent
-set smarttab
+""set smarttab
 set expandtab
 set softtabstop=4
 set tabstop=4
-set nojoinspaces
+set shiftwidth=4
+""set nojoinspaces
 set backspace=indent,eol,start                              " Allow backspacing over anything 
 
 " Filetype may overwrite indent options!
@@ -123,8 +124,8 @@ if has('gui_running')
     set t_Co=256
     "colorscheme molokai 
     colorscheme molokai
-    ""set gfn=Monaco:h13
-    set gfn=Menlo:h12
+    set gfn=Monaco:h12
+    ""set gfn=Menlo:h12
 
     set fuoptions=maxvert,maxhorz
 
