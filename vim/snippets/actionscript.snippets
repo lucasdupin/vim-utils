@@ -28,10 +28,10 @@ snippet case
 snippet catch
 	catch (e:${1:Error})
 	{
-		$0
+		${2}
 	}
 snippet ?
-	? ${1:trueExpression} : ${2:falseExpression}$0
+	? ${1:trueExpression} : ${2:falseExpression}${3:;}
 snippet const
 	const ${1:name}:${2:Object};
 snippet default
@@ -93,7 +93,7 @@ snippet include
 snippet log
 	Log.getLogger("${1:`echo ${TM_FILENAME%.as}`}").${2:error}(${3:message});
 snippet <
-	<${1:name}>$0</${1/([^ ]+).*/$1/}>
+	<${1:name}>${2}</$1>
 snippet switch
 	switch (${1})
 	{
@@ -152,8 +152,9 @@ snippet var
 snippet while
 	while (${1})
 	{
-		${0}
+		${2}
 	}
+	${3}
 snippet package
 	package ${1} {
 		import flash.display.*;
