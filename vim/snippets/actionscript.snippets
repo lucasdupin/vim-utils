@@ -36,11 +36,11 @@ snippet const
 	const ${1:name}:${2:Object};
 snippet default
 	default ${1:expression} :
-		$0
+		${2}
 	break;
 snippet dispatch
 	dispatchEvent(new ${1:Event}(${2:Event}.${3:COMPLETE}));
-	$0
+	${4}
 snippet dispose
 	if(${1:target}){
 		$1.dispose();
