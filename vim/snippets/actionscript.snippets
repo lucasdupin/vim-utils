@@ -38,10 +38,10 @@ snippet default
 		$0
 	break;
 snippet dispatch
-	dispatchEvent(new ${1:Event}(${1:Event}.${2/^.+$/\U$0\E/g})); // ${2:CLICK}
-
+	dispatchEvent(new ${1:Event}(${2:Event}.${3:COMPLETE}));
+	$0
 snippet dispose
-	if($1){
+	if(${1:target}){
 		$1.dispose();
 		safeRemoveChild($1);
 		$1 = null;
@@ -49,9 +49,9 @@ snippet dispose
 snippet do
 	do
 	{
-		$2
+		${2:stuff}
 	}
-	while ($1);
+	while (${1:true});
 snippet else
 	else
 	{
@@ -62,12 +62,17 @@ snippet smartFor
 	{
 		$0
 	}
-snippet forEach
+snippet foreach
 	for each (var ${1:item}:${2:Object} in ${3:obj})
 	{
 		$0
 	}
-snippet forIn
+snippet each
+	for each (var ${1:item}:${2:Object} in ${3:obj})
+	{
+		$0
+	}
+snippet forin
 	for (var ${1:p}:String in ${2:obj})
 	{
 		$0
@@ -119,8 +124,16 @@ snippet tryFinally
 	}
 snippet use
 	use namespace ${1:nsName};
+snippet doc
+	/*
+	 * $1
+	 * */
 snippet public
 	${1:public} var ${2:name}:${3:Object};
+snippet override
+	override ${1:public} function ${2:name}(${3}):${4:void}{
+		$0
+	}
 snippet func
 	${1:public} function ${2:name}(${3}):${4:void}{
 		$0

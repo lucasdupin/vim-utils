@@ -224,7 +224,7 @@ nmap <Leader>c :set invfullscreen<cr>
 au FileType xhtml,xml so ~/.vim/ftplugin/html_autoclosetag.vim
 
 
-" Make actionscript helpers
+" Enable actionscript helpers
 au FileType actionscript set makeprg=rake
 au FileType as3 set efm=%C%.%#,%E%f(%l) col %c\ Error %m
 autocmd BufRead,BufNewFile *.as set filetype=actionscript
