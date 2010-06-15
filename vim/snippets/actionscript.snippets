@@ -49,43 +49,43 @@ snippet dispose
 snippet do
 	do
 	{
-		${2:stuff}
+		${2}
 	}
 	while (${1:true});
 snippet else
 	else
 	{
-		$0
+		${1}
 	}
 snippet smartFor
 	for (var ${1:i}:int = 0, ${2:el}:${3:*}; ${2:el} = ${4:elements}[${1:i}]; ${1:i}++)
 	{
-		$0
+		${4}
 	}
 snippet foreach
 	for each (var ${1:item}:${2:Object} in ${3:obj})
 	{
-		$0
+		${4}
 	}
 snippet each
-	for each (var ${1:item}:${2:Object} in ${3:obj})
+	each (var ${1:item}:${2:Object} in ${3:obj})
 	{
-		$0
+		${4}
 	}
 snippet forin
 	for (var ${1:p}:String in ${2:obj})
 	{
-		$0
+		${3}
 	}
 snippet for for
-	for (var ${1:i}:int = ${2:0}; ${1:i} < ${3:n}; ${1:i}++)
+	for (var ${1:i}:int = ${2:0}; $1 < ${3:n}; $1++)
 	{
-		$0
+		${4}
 	}
 snippet if
 	if (${1})
 	{
-		${0}
+		${2}
 	}
 snippet include
 	inlcude ${1:filename.as};
