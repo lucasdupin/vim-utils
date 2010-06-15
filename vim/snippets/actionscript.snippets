@@ -22,8 +22,9 @@ snippet build
 	      output: public/$1.swf
 snippet case
 	case ${1:expression} :
-		$0
+		${2}
 	break;
+	${3}
 snippet catch
 	catch (e:${1:Error})
 	{
@@ -94,9 +95,9 @@ snippet log
 snippet <
 	<${1:name}>$0</${1/([^ ]+).*/$1/}>
 snippet switch
-	switch ($1)
+	switch (${1})
 	{
-		$0
+		${2}
 	}
 snippet throw
 	throw new ${1:Error}("${2:Error Message}");
@@ -105,7 +106,7 @@ snippet try
 	{
 		${1}
 	} 
-	catch (e:Error)
+	catch (e:${3:Error})
 	{
 		${2}
 	}
@@ -114,7 +115,7 @@ snippet tryFinally
 	{
 		${1}
 	}
-	catch (e:Error)
+	catch (e:${4:Error})
 	{
 		${2}
 	} 
