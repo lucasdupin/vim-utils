@@ -225,6 +225,7 @@ au FileType xhtml,xml so ~/.vim/ftplugin/html_autoclosetag.vim
 
 
 " Enable actionscript helpers
+au FileType actionscript set dictionary+=~/.vim/dict/actionscript.dict
 au FileType actionscript set makeprg=rake
 au FileType as3 set efm=%C%.%#,%E%f(%l) col %c\ Error %m
 autocmd BufRead,BufNewFile *.as set filetype=actionscript
