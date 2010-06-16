@@ -229,6 +229,7 @@ au FileType actionscript set dictionary+=~/.vim/dict/actionscript.dict
 au FileType actionscript set makeprg=rake
 au FileType as3 set efm=%C%.%#,%E%f(%l) col %c\ Error %m
 autocmd BufRead,BufNewFile *.as set filetype=actionscript
+set complete+=k
 
 " Interpret python code under the visual cursor 
 au FileType python set makeprg=python\ %
