@@ -141,6 +141,8 @@ endif
 ""
 let tlist_actionscript_settings = 'actionscript;i:TODO;c:class;I:interface;f:method;p:property;v:variable'
 
+" Command-T"
+let g:CommandTMatchWindowAtTop = 1 "Window at top
 
 "
 " SuperTab Completion
