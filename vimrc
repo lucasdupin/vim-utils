@@ -177,9 +177,6 @@ map <PageDown> :call SmoothPageScrollDown()<CR>
 map <PageUp>   :call SmoothPageScrollUp()<CR> 
 
 
-" Fuzzy finder
-map <leader>f <ESC>:FufFile **/<CR>
-
 " Buffer editing
 nn <Leader>j       <C-W>j<C-W>_
 nn <Leader>k       <C-W>k<C-W>_
