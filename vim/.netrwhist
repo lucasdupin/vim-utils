@@ -1,8 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/lucas/src/pharmaton_quiz/branches/flash'
 let g:netrw_dirhist_2='/Users/lucas/src/levis_facebook/trunk'
 let g:netrw_dirhist_3='/Users/lucas/src/vaicomtudo/trunk'
 let g:netrw_dirhist_4='/Users/lucas/src/enjoy_the_ride/backend'
 let g:netrw_dirhist_5='/Users/lucas/src/pharmaton_quiz/branches/flash'
 let g:netrw_dirhist_6='/Users/lucas/src/vaicomtudo/trunk'
+let g:netrw_dirhist_7='/Users/lucas/src/unimedii/frontend/trunk'
+let g:netrw_dirhist_8='/Users/lucas/src/enjoy_the_ride/backend/application'
+let g:netrw_dirhist_9='/Users/lucas/src/unimedii/frontend/trunk'
