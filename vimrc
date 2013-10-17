@@ -198,9 +198,14 @@ nn <Leader>d       <ESC>:NERDTreeToggle<cr>
 nn <Leader>n       <ESC>:set number! number?<cr>
 
 nn <Leader>e       <ESC>:TlistToggle<Cr>
+
+" My beloved leaders <3
 nn <Leader>s       <ESC>:Ack 
 nn <Leader>r       <ESC>:make<Cr>
 nn <Leader>o       <ESC>:make open<Cr>
+nn <Leader>p       <Esc>:CtrlP<Cr>
+let g:ctrlp_map = '<Leader>p'
+let g:ctrlp_cmd = 'CtrlP'
 
 let Tlist_File_Fold_Auto_Close = 1
 
