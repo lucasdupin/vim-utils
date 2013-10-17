@@ -4,9 +4,9 @@
 
 set nocompatible
 
-colorscheme wombat
+colorscheme molokai
+
 " General
-set shm=atI                     " Disable Intro screen
 set vb                          " Visual bell
 ""set nobk nowb noswf             " Disable backup
 set lazyredraw                  " Don't update while in macro
@@ -22,7 +22,6 @@ set complete=.,w,b,u,U,t,i,d    " Extra powerful completions :P
 set modeline modelines=5        " Respect modeline if the file has one in the first 5!
 set enc=utf-8                   " UTF-8 Default encoding
 set number                      " Line Numbers"
-""set winminheight=0              " Window minimum height
 set numberwidth=1               " Line number column narrow as possible
 set cpoptions+=>                " Items in register separated by newline  
 
@@ -144,6 +143,13 @@ let tlist_actionscript_settings = 'actionscript;i:TODO;c:class;I:interface;f:met
 " Command-T"
 let g:CommandTMatchWindowAtTop = 1 "Window at top
 
+
+"
+" Stuff that will make my life easiear when writing CoffeeScript"
+"
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
 "
 " SuperTab Completion
 "
@@ -164,6 +170,8 @@ vnoremap <tab>       >gv
 vnoremap <s-tab>     <gv
 
 "" Scrolling
+map <S-Down> <C-E>
+map <S-Up> <C-Y>
 no J 10j
 no K 10k
 
@@ -252,3 +260,7 @@ vnoremap /          <Esc>/\%V
 " Avoid some stupid typing when substituing 
 " variables in visual mode
 vnoremap r          <Esc>:'<,'>B s/\<.*\>/
+
+
+" Pathogen!"
+execute pathogen#infect()
