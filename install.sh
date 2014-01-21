@@ -3,7 +3,7 @@
 BIN_FOLDER=~/.bin
 
 #Baking up old files
-for file in ~/.vim ~/.vimrc ~/.ctags
+for file in ~/.vim ~/.vimrc ~/.ctags ~/.tmux.conf
 do
 	if [ -h file ]; then
 		echo "baking up your .vim folder"
@@ -15,6 +15,7 @@ done
 ln -s `pwd`/vim ~/.vim
 ln -s `pwd`/vimrc ~/.vimrc
 ln -s `pwd`/ctags ~/.ctags
+ln -s `pwd`/tmux.conf ~/.tmux.conf
 
 #Installing daemon
 if [ -d $BIN_FOLDER ]; then

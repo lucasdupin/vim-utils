@@ -5,6 +5,7 @@
 set nocompatible
 
 colorscheme molokai
+set t_Co=256
 
 " General
 set vb                          " Visual bell
@@ -30,6 +31,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Search into files"
 set grepprg=ack
 
 " Tell vim to remember certain things when we exit
@@ -75,9 +77,9 @@ set scrolloff=10         " At Least 5 lines above/below cursor
 set autoindent
 ""set smarttab
 set expandtab
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
 ""set nojoinspaces
 set backspace=indent,eol,start                              " Allow backspacing over anything 
 
@@ -120,9 +122,6 @@ if has('gui_running')
     set mousefocus          " Mouse can control splits
     set mouse=a
 
-    set t_Co=256
-    "colorscheme molokai 
-    colorscheme molokai
     set gfn=Monaco:h12
     ""set gfn=Menlo:h12
 
@@ -149,6 +148,8 @@ let g:CommandTMatchWindowAtTop = 1 "Window at top
 "
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+au BufNewFile,BufRead *.eco set filetype=html
+
 
 "
 " SuperTab Completion
@@ -266,6 +267,9 @@ vnoremap /          <Esc>/\%V
 " variables in visual mode
 vnoremap r          <Esc>:'<,'>B s/\<.*\>/
 
+" Powerline
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
+let g:Powerline_symbols = "fancy"
 
 " Pathogen!"
 execute pathogen#infect()
