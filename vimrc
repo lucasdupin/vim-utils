@@ -112,6 +112,9 @@ set showmatch            " Show matching brackets
 set mat=5
 set matchpairs=(:),{:},[:],<:>
 
+" Pathogen!"
+execute pathogen#infect()
+
 """
 """ Extensions
 """
@@ -270,6 +273,3 @@ vnoremap r          <Esc>:'<,'>B s/\<.*\>/
 " Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
 let g:Powerline_symbols = "fancy"
-
-" Pathogen!"
-execute pathogen#infect()
