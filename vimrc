@@ -2,9 +2,13 @@
 " Author: Lucas 
 " Description: My vim helpers, based on Frangossauro's .vimrc 
 
+" Pathogen!"
+execute pathogen#infect()
+
 set nocompatible
 
-colorscheme molokai
+colorscheme Monokai
+"colorscheme zenburn
 set t_Co=256
 
 " General
@@ -112,8 +116,8 @@ set showmatch            " Show matching brackets
 set mat=5
 set matchpairs=(:),{:},[:],<:>
 
-" Pathogen!"
-execute pathogen#infect()
+" Airline
+let g:airline_powerline_fonts = 1
 
 """
 """ Extensions
