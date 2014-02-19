@@ -1,3 +1,24 @@
+[submodule "vim/bundle/vim-stylus"]
+	path = vim/bundle/vim-stylus
+	url = git://github.com/wavded/vim-stylus.git
+[submodule "vim/bundle/vim-snippets"]
+	path = vim/bundle/vim-snippets
+	url = git://github.com/honza/vim-snippets.git
+[submodule "vim/bundle/vim-snipmate"]
+	path = vim/bundle/vim-snipmate
+	url = git://github.com/garbas/vim-snipmate.git
+[submodule "vim/bundle/vim-ruby"]
+	path = vim/bundle/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/bundle/vim-rails"]
+	path = vim/bundle/vim-rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "vim/bundle/vim-bundler"]
+	path = vim/bundle/vim-bundler
+	url = git://github.com/tpope/vim-bundler.git
+[submodule "vim/bundle/vim-addon-mw-utils"]
+	path = vim/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -13,3 +34,6 @@
 [submodule "vim/bundle/vim-jade"]
 	path = vim/bundle/vim-jade
 	url = git://github.com/digitaltoad/vim-jade.git
+[submodule "vim/bundle/tlib_vim"]
+	path = vim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
