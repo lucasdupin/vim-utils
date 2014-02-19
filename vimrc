@@ -205,6 +205,7 @@ nn <Leader>s       <ESC>:Ack
 nn <Leader>r       <ESC>:make<Cr>
 nn <Leader>o       <ESC>:make open<Cr>
 nn <Leader>p       <Esc>:CtrlP<Cr>
+nn <Leader>l       <Esc>:CtrlPClearCache<Cr>
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -233,7 +234,6 @@ nmap <Leader>c :set invfullscreen<cr>
 "" FileType shitty!
 "
 
-" ,r Save and Run the code
 au FileType xhtml,xml so ~/.vim/ftplugin/html_autoclosetag.vim
 
 
