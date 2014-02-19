@@ -1,0 +1,42 @@
+[user]
+	name = Lucas Dupin
+	email = lucas@commit.to
+
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	cl = clone --recursive
+	undo-commit = reset --soft HEAD^
+	df = diff
+	lg2 = log -p
+	who = shortlog -s --
+	serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[credential]
+helper = osxkeychain
+[push]
+	default = simple

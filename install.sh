@@ -16,6 +16,7 @@ ln -s `pwd`/vim ~/.vim
 ln -s `pwd`/vimrc ~/.vimrc
 ln -s `pwd`/ctags ~/.ctags
 ln -s `pwd`/tmux.conf ~/.tmux.conf
+ln -s `pwd`/gitconfig ~/.gitconfig
 
 #Installing daemon
 if [ -d $BIN_FOLDER ]; then
