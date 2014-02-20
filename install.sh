@@ -2,11 +2,11 @@
 
 BIN_FOLDER=~/.bin
 
-#Baking up old files
+#Backup of old files
 for file in ~/.vim ~/.vimrc ~/.ctags ~/.tmux.conf
 do
 	if [ -h file ]; then
-		echo "baking up your .vim folder"
+		echo "backup for: $file"
 		mv file "$file.`date +%s`.bak" 
 	fi
 done
