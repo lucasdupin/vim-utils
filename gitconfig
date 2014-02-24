@@ -13,7 +13,7 @@
 	lg2 = log -p
 	who = shortlog -s --
 	serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 
 [color]
 	branch = auto
