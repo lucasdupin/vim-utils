@@ -66,6 +66,7 @@ hi TabLineFill  cterm=bold ctermbg=none
 " Command-line completion
 set wildmode=longest:full,list:full
 set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db,*.swc
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tmp)$'
 
 " AutoComplete in Vim
 set infercase
@@ -128,9 +129,8 @@ let g:airline_powerline_fonts = 1
 if has('gui_running')
     set mousefocus          " Mouse can control splits
     set mouse=a
-
-    set gfn=Monaco:h12
-    ""set gfn=Menlo:h12
+    set transparency=5
+    set guifont=Source\ Code\ Pro\ for\ Powerline
 
     set fuoptions=maxvert,maxhorz
 
