@@ -21,25 +21,14 @@ ln -s `pwd`/gitconfig ~/.gitconfig
 #Installing daemon
 if [ -d $BIN_FOLDER ]; then
 	echo ".bin already exists"
-
-	#removing old files
-	rm $BIN_FOLDER/fcshd
-	rm $BIN_FOLDER/mvim
 else
 	#Creating dir
 	mkdir $BIN_FOLDER
 	#exporting to path
-	echo "export PATH=$BIN_FOLDER:\$PATH" >> ~/.profile
+	echo "export PATH=$BIN_FOLDER:\$PATH" >> ~/.bash_profile
 
 	#sourcing
-	source ~/.profile
+	source ~/.bash_profile
 fi
-
-#Creating the links
-ln -s `pwd`/bin/fcshd $BIN_FOLDER/fcshd
-ln -s `pwd`/bin/mvim $BIN_FOLDER/mvim
-
-chmod u+x $BIN_FOLDER/fcshd
-chmod u+x $BIN_FOLDER/mvim
 
 echo "Yep!"
