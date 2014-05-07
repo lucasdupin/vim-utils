@@ -7,7 +7,7 @@ execute pathogen#infect()
 
 set nocompatible
 
-colorscheme Monokai
+colorscheme Molokai
 "colorscheme zenburn
 set t_Co=256
 
