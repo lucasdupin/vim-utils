@@ -183,6 +183,10 @@ map <S-Up> <C-Y>
 no J 10j
 no K 10k
 
+"" Copy and paste
+vmap <C-x> :!pbcopy<CR>  
+vmap <C-c> :w !pbcopy<CR><CR> 
+
 " Increment/decrement numbers
 nn = <c-a>
 nn + <c-x>
