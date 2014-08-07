@@ -66,7 +66,7 @@ hi TabLineFill  cterm=bold ctermbg=none
 " Command-line completion
 set wildmode=longest:full,list:full
 set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db,*.swc
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tmp)$'
+let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn|tmp)|bower_components|node_modules)$'
 
 " AutoComplete in Vim
 set infercase
@@ -157,12 +157,6 @@ autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 au BufNewFile,BufRead *.eco set filetype=html
 
-
-"
-" SuperTab Completion
-"
-let g:SuperTabDefaultCompletionType = "context"
-
 "
 " TabBar (minibufexpl++)
 "
@@ -212,7 +206,7 @@ nn <Leader>n       <ESC>:set number! number?<cr>
 nn <Leader>e       <ESC>:TlistToggle<Cr>
 
 " My beloved leaders <3
-nn <Leader>s       <ESC>:Ack 
+nn <Leader>s       <ESC>:Ag 
 nn <Leader>r       <ESC>:make<Cr>
 nn <Leader>o       <ESC>:make open<Cr>
 nn <Leader>p       <Esc>:CtrlP<Cr>
@@ -281,3 +275,28 @@ vnoremap r          <Esc>:'<,'>B s/\<.*\>/
 " Powerline
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
 let g:Powerline_symbols = "fancy"
+
+"
+" Fix YouCompleteMe / UltiSnips conflict"
+"
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips#JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-e>"
+" this mapping Enter key to <C-y> to chose the current highlight item 
+" and close the selection list, same as other IDEs.
+" CONFLICT with some plugins like tpope/Endwise
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
