@@ -66,7 +66,14 @@ hi TabLineFill  cterm=bold ctermbg=none
 " Command-line completion
 set wildmode=longest:full,list:full
 set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db,*.swc
-let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn|tmp)|bower_components|node_modules)$'
+" let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn|tmp)|bower_components|node_modules)$'
+let g:ctrlp_user_command = {
+  \ 'types': {
+  \   1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others'],
+  \   2: ['.hg', 'hg --cwd %s locate -I .'],
+  \  },
+  \ 'fallback': 'find %s -type f'
+  \ }
 
 " AutoComplete in Vim
 set infercase

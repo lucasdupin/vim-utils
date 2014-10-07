@@ -11,6 +11,8 @@
 	undo-commit = reset --soft HEAD^
 	df = diff
 	lg2 = log -p
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
 	who = shortlog -s --
 	serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
