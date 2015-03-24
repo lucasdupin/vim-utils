@@ -1,6 +1,6 @@
 [user]
 	name = Lucas Dupin
-	email = lucas@commit.to
+	email = dupin@doubleleft.com
 
 [alias]
 	st = status
@@ -42,3 +42,6 @@
 helper = osxkeychain
 [push]
 	default = simple
+
+[url "https://"]
+  insteadOf = git://

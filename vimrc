@@ -3,12 +3,13 @@
 " Description: My vim helpers, based on Frangossauro's .vimrc 
 
 " Pathogen!"
+scriptencoding utf-8
 execute pathogen#infect()
 
 set nocompatible
 
-colorscheme Molokai
-"colorscheme zenburn
+""colorscheme Molokai
+colorscheme Badwolf
 set t_Co=256
 
 " General
@@ -26,6 +27,7 @@ set splitbelow                  " Split windows BELOW current window!
 set complete=.,w,b,u,U,t,i,d    " Extra powerful completions :P
 set modeline modelines=5        " Respect modeline if the file has one in the first 5!
 set enc=utf-8                   " UTF-8 Default encoding
+set encoding=utf-8
 set number                      " Line Numbers"
 set numberwidth=1               " Line number column narrow as possible
 set cpoptions+=>                " Items in register separated by newline  
@@ -94,6 +96,9 @@ set tabstop=2
 set shiftwidth=2
 ""set nojoinspaces
 set backspace=indent,eol,start                              " Allow backspacing over anything 
+set list listchars=tab:·-,trail:·,extends:> ",eol:¬
+let indent_guides_start_level=2
+let indent_guides_guide_size=2
 
 " Filetype may overwrite indent options!
 filetype plugin indent on
