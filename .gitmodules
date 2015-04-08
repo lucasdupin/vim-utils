@@ -1,12 +1,3 @@
-[submodule "vim/bundle/ag"]
-	path = vim/bundle/ag
-	url = https://github.com/rking/ag.vim
-[submodule "vim/bundle/vim-stylus"]
-	path = vim/bundle/vim-stylus
-	url = https://github.com/wavded/vim-stylus.git
-[submodule "vim/bundle/vim-snippets"]
-	path = vim/bundle/vim-snippets
-	url = git@github.com:honza/vim-snippets.git
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
@@ -16,48 +7,9 @@
 [submodule "vim/bundle/vim-bundler"]
 	path = vim/bundle/vim-bundler
 	url = https://github.com/tpope/vim-bundler.git
-[submodule "vim/bundle/vim-addon-mw-utils"]
-	path = vim/bundle/vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/vim-coffee-script"]
-	path = vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
 [submodule "vim/bundle/colorschemes"]
 	path = vim/bundle/colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
 [submodule "vim/bundle/vim-jade"]
 	path = vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
-[submodule "vim/bundle/tlib_vim"]
-	path = vim/bundle/tlib_vim
-	url = https://github.com/tomtom/tlib_vim.git
-[submodule "vim/bundle/editorconfig-vim"]
-	path = vim/bundle/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "vim/bundle/vim-gitgutter"]
-	path = vim/bundle/vim-gitgutter
-	url = git://github.com/airblade/vim-gitgutter.git
-[submodule "vim/bundle/vim-qml"]
-	path = vim/bundle/vim-qml
-	url = https://github.com/peterhoeg/vim-qml.git
-[submodule "vim/bundle/vim-multiple-cursors"]
-	path = vim/bundle/vim-multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors.git
-[submodule "vim/bundle/vim-mustache-handlebars"]
-	path = vim/bundle/vim-mustache-handlebars
-	url = git@github.com:mustache/vim-mustache-handlebars.git
-[submodule "vim/bundle/mustache"]
-	path = vim/bundle/mustache
-	url = git://github.com/mustache/vim-mustache-handlebars.git

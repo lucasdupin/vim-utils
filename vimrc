@@ -4,12 +4,38 @@
 
 " Pathogen!"
 scriptencoding utf-8
-execute pathogen#infect()
 
+" Vundle setup
 set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-""colorscheme Molokai
-colorscheme Badwolf
+" Plugins:
+Plugin 'gmarik/Vundle.vim'
+Plugin 'rking/ag.vim'
+Plugin 'vim-stylus'
+Plugin 'UltiSnips'
+Plugin 'ctrlp.vim'
+Plugin 'editorconfig-vim'
+Plugin 'The-NERD-tree'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'coffee-check.vim'
+Plugin 'vim-coffee-script'
+Plugin 'gitignore'
+Plugin 'airblade/vim-gitgutter.git'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'terryma/vim-multiple-cursors.git'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'ruby.vim'
+
+call vundle#end()
+filetype plugin indent on
+
+colorscheme Molokai
+"colorscheme Badwolf
 set t_Co=256
 
 " General
@@ -100,9 +126,6 @@ set list listchars=tab:·-,trail:·,extends:> ",eol:¬
 let indent_guides_start_level=2
 let indent_guides_guide_size=2
 
-" Filetype may overwrite indent options!
-filetype plugin indent on
-
 set formatoptions-=t
 set formatoptions+=corqn
 "                  |||||
@@ -115,7 +138,6 @@ set formatoptions+=corqn
 " Folding
 set foldmethod=marker
 set foldcolumn=1
-filetype plugin on
 
 " Search Configuration
 ""set ignorecase              " make searches case-insensitive, unless they contain upper-case letters:
@@ -288,26 +310,14 @@ vnoremap r          <Esc>:'<,'>B s/\<.*\>/
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
 let g:Powerline_symbols = "fancy"
 
-"
-" Fix YouCompleteMe / UltiSnips conflict"
-"
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips#JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
-            endif
-        endif
-    endif
-    return ""
-endfunction
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-e>"
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 " this mapping Enter key to <C-y> to chose the current highlight item 
 " and close the selection list, same as other IDEs.
 " CONFLICT with some plugins like tpope/Endwise
