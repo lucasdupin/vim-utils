@@ -15,7 +15,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'rking/ag.vim'
 Plugin 'vim-stylus'
-Plugin 'UltiSnips'
 Plugin 'ctrlp.vim'
 Plugin 'editorconfig-vim'
 Plugin 'The-NERD-tree'
@@ -33,6 +32,7 @@ Plugin 'ruby.vim'
 
 call vundle#end()
 filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
 
 colorscheme Molokai
 "colorscheme Badwolf
@@ -202,8 +202,8 @@ let g:Tb_UseSingleClick = 1
 let mapleader = ","
 
 " Slightly more familiar indent on visual mode
-vnoremap <tab>       >gv
-vnoremap <s-tab>     <gv
+"noremap <tab>       >gv
+"noremap <s-tab>     <gv
 
 "" Scrolling
 map <S-Down> <C-E>
@@ -311,14 +311,16 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
 let g:Powerline_symbols = "fancy"
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<c-n>"
+"let g:UltiSnipsJumpForwardTrigger="<c-n>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" this mapping Enter key to <C-y> to chose the current highlight item 
-" and close the selection list, same as other IDEs.
-" CONFLICT with some plugins like tpope/Endwise
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+let g:ycm_cache_omnifunc = 1
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
