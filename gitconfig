@@ -39,7 +39,7 @@
 	untracked = cyan
 
 [credential]
-helper = osxkeychain
+	helper = osxkeychain
 [push]
 	default = simple
 

@@ -20,8 +20,6 @@ Plugin 'editorconfig-vim'
 Plugin 'The-NERD-tree'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic.git'
-Plugin 'coffee-check.vim'
-Plugin 'vim-coffee-script'
 Plugin 'gitignore'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'Valloric/YouCompleteMe'
@@ -29,6 +27,8 @@ Plugin 'terryma/vim-multiple-cursors.git'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ruby.vim'
+Plugin 'othree/yajs.vim'
+Plugin 'delimitMate.vim'
 
 call vundle#end()
 filetype plugin indent on
