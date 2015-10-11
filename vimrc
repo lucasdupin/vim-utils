@@ -12,7 +12,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins:
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'rking/ag.vim'
 Plugin 'vim-stylus'
 Plugin 'ctrlp.vim'
@@ -29,6 +29,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'ruby.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'delimitMate.vim'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 filetype plugin indent on
@@ -199,7 +200,7 @@ let g:Tb_UseSingleClick = 1
 
 "
 "" Mappings
-let mapleader = ","
+"let mapleader = ","
 
 " Slightly more familiar indent on visual mode
 "noremap <tab>       >gv
@@ -223,8 +224,8 @@ nmap :W :w
 nmap :Q :q
 nmap :Wq :wq
 
-map <PageDown> :call SmoothPageScrollDown()<CR> 
-map <PageUp>   :call SmoothPageScrollUp()<CR> 
+" Space to select a file
+map <space> :CtrlP <CR>
 
 
 " Buffer editing
@@ -240,6 +241,7 @@ nn <Leader>n       <ESC>:set number! number?<cr>
 nn <Leader>e       <ESC>:TlistToggle<Cr>
 
 " My beloved leaders <3
+nn <Leader>w       <ESC>:w<Cr>
 nn <Leader>s       <ESC>:Ag 
 nn <Leader>r       <ESC>:make<Cr>
 nn <Leader>o       <ESC>:make open<Cr>

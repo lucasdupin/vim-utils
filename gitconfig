@@ -16,6 +16,7 @@
 	who = shortlog -s --
 	serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+  submodule-pull = submodule update --init --recursive
 
 [color]
 	branch = auto
@@ -45,3 +46,7 @@
 
 [url "https://"]
   insteadOf = git://
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
