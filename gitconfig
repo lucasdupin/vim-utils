@@ -1,6 +1,6 @@
 [user]
 	name = Lucas Dupin
-	email = dupin@doubleleft.com
+	email = lucas.dupin@b-reel.com
 
 [alias]
 	st = status
@@ -47,6 +47,3 @@
 [url "https://"]
   insteadOf = git://
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true

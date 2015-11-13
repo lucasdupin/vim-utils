@@ -22,22 +22,31 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'gitignore'
 Plugin 'airblade/vim-gitgutter.git'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 Plugin 'terryma/vim-multiple-cursors.git'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
 Plugin 'ruby.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'delimitMate.vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'surround.vim'
 
 call vundle#end()
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 
-colorscheme Molokai
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors= 256
+let g:solarized_termtrans= 1
+"colorscheme Molokai
 "colorscheme Badwolf
-set t_Co=256
+"set t_Co=256
 
 " General
 set vb                          " Visual bell
@@ -165,25 +174,13 @@ if has('gui_running')
     set mousefocus          " Mouse can control splits
     set mouse=a
     set transparency=5
-    set guifont=Source\ Code\ Pro\ for\ Powerline
 
     set fuoptions=maxvert,maxhorz
 
     " Dont show shitty toolbar
     set go-=T to 
 
-    " Transparency "
-    "set transp=5
 endif
-
-"
-" Actionscript support in taglist
-""
-let tlist_actionscript_settings = 'actionscript;i:TODO;c:class;I:interface;f:method;p:property;v:variable'
-
-" Command-T"
-let g:CommandTMatchWindowAtTop = 1 "Window at top
-
 
 "
 " Stuff that will make my life easiear when writing CoffeeScript"
@@ -326,3 +323,43 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ycm_cache_omnifunc = 1
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" HTML checker is slow
+let g:syntastic_html_checkers=[]
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
