@@ -47,3 +47,9 @@
 [url "https://"]
   insteadOf = git://
 [filter "lfs"]
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+[http]
+	cookiefile = /Users/user/.gitcookies

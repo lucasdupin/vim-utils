@@ -18,33 +18,32 @@ Plugin 'vim-stylus'
 Plugin 'ctrlp.vim'
 Plugin 'editorconfig-vim'
 Plugin 'The-NERD-tree'
+Plugin 'othree/html5.vim'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'gitignore'
 Plugin 'airblade/vim-gitgutter.git'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'Shougo/neocomplete'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
+Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'terryma/vim-multiple-cursors.git'
-"Plugin 'SirVer/ultisnips'
-"Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'ruby.vim'
 Plugin 'othree/yajs.vim'
 Plugin 'delimitMate.vim'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'surround.vim'
+Plugin 'lepture/vim-jinja'
 
 call vundle#end()
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 let g:solarized_termcolors= 256
 let g:solarized_termtrans= 1
-"colorscheme Molokai
+colorscheme Molokai
 "colorscheme Badwolf
 "set t_Co=256
 
@@ -67,6 +66,7 @@ set encoding=utf-8
 set number                      " Line Numbers"
 set numberwidth=1               " Line number column narrow as possible
 set cpoptions+=>                " Items in register separated by newline  
+set autoread                    " Reload files when they change
 
 "" Disable backup
 set nobackup
@@ -104,14 +104,14 @@ hi TabLineFill  cterm=bold ctermbg=none
 " Command-line completion
 set wildmode=longest:full,list:full
 set wildignore+=*.o,*.obj,*.pyc,*.DS_STORE,*.db,*.swc
-" let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn|tmp)|bower_components|node_modules)$'
-let g:ctrlp_user_command = {
-  \ 'types': {
-  \   1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others'],
-  \   2: ['.hg', 'hg --cwd %s locate -I .'],
-  \  },
-  \ 'fallback': 'find %s -type f'
-  \ }
+let g:ctrlp_custom_ignore = '\v[\/](\.(git|hg|svn|tmp)|bower_components|node_modules)$'
+"let g:ctrlp_user_command = {
+"  \ 'types': {
+"  \   1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others'],
+"  \   2: ['.hg', 'hg --cwd %s locate -I .'],
+"  \  },
+"  \ 'fallback': 'find %s -type f'
+"  \ }
 
 " AutoComplete in Vim
 set infercase
@@ -310,34 +310,26 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim/
 let g:Powerline_symbols = "fancy"
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<c-n>"
+"let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsJumpForwardTrigger="<c-n>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsEditSplit="vertical"
 
-let g:ycm_cache_omnifunc = 1
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
+"let g:ycm_cache_omnifunc = 1
+"let g:ycm_key_list_select_completion=[]
+"let g:ycm_key_list_previous_completion=[]
 
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " HTML checker is slow
 let g:syntastic_html_checkers=[]
