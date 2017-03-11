@@ -8,35 +8,34 @@ scriptencoding utf-8
 " Vundle setup
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
 " Plugins:
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'rking/ag.vim'
-Plugin 'vim-stylus'
-Plugin 'ctrlp.vim'
-Plugin 'editorconfig-vim'
-Plugin 'The-NERD-tree'
-Plugin 'othree/html5.vim'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/syntastic.git'
-Plugin 'gitignore'
-Plugin 'airblade/vim-gitgutter.git'
-Plugin 'tpope/vim-fugitive'
-Plugin 'ervandew/supertab'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'terryma/vim-multiple-cursors.git'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'ruby.vim'
-Plugin 'othree/yajs.vim'
-Plugin 'delimitMate.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'surround.vim'
-Plugin 'lepture/vim-jinja'
+Plug 'VundleVim/Vundle.vim'
+Plug 'rking/ag.vim'
+Plug 'vim-stylus'
+Plug 'ctrlp.vim'
+Plug 'editorconfig-vim'
+Plug 'The-NERD-tree'
+Plug 'othree/html5.vim'
+Plug 'bling/vim-airline'
+Plug 'vim-syntastic/syntastic'
+Plug 'gitignore'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ruby.vim'
+Plug 'othree/yajs.vim'
+Plug 'delimitMate.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'surround.vim'
+Plug 'lepture/vim-jinja'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 
